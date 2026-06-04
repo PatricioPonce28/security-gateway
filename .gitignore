@@ -1,0 +1,19 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Variables de entorno (contienen datos sensibles)
+.env
+.env.local
+.env.production
+
+# Base de datos (se crea sola al arrancar)
+gateway/gateway.db
+gateway/logs/
+
+# Vite build
+dashboard/dist/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db

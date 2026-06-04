@@ -6,6 +6,7 @@ const eventBus = require("../services/eventBus");
 const ALLOWED_ORIGINS = [
   "http://localhost:5173", // Vite dev server del dashboard
   "http://localhost:3000",
+  "https://security-gateway-omega.vercel.app/", // URL de producción del dashboard
 ];
 
 // User-Agents conocidos como maliciosos o scanners

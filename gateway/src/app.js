@@ -23,10 +23,13 @@ const PORT = process.env.PORT || 3000;
 // 1. CONFIGURACIÓN BASE
 // ─────────────────────────────────────────
 app.set("trust proxy", "loopback");
-app.use(cors({ origin: "http://localhost:5173" }));
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://security-gateway-omega.vercel.app/", // ← agrega tu URL de Vercel
+];
 app.use(express.json());
 
-// ─────────────────────────────────────────
+// ─────────────────────────────────────────|
 // 2. BASE DE DATOS
 // ─────────────────────────────────────────
 initDatabase();

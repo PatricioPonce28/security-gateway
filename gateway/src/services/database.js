@@ -3,7 +3,9 @@ const path = require("path");
 const logger = require("./logger");
 
 // El archivo .db se crea automáticamente si no existe
-const DB_PATH = path.join(__dirname, "../../gateway.db");
+const DB_PATH = process.env.NODE_ENV === "production"
+  ? "/app/data/gateway.db"
+  : path.join(__dirname, "../../gateway.db");
 
 let db;
 

@@ -1,6 +1,6 @@
 # 🛡️ Security Gateway Dashboard
 
-Un **reverse proxy con firewall de aplicación web (WAF)** construido con Node.js + Express, con dashboard en tiempo real para monitoreo de amenazas. Proyecto integrador de **Sistemas Operativos, Infraestructura y Ciberseguridad**.
+Un **reverse proxy con firewall de aplicación web (WAF)** construido con Node.js + Express, con dashboard en tiempo real para monitoreo de amenazas.
 
 ---
 
@@ -368,22 +368,10 @@ curl -X POST http://localhost:3000/api/block-ip \
 
 ### Gateway → Railway
 1. Crear cuenta en [railway.app](https://railway.app)
-2. Conectar repositorio de GitHub
-3. Seleccionar carpeta `gateway/` como root
-4. Agregar variables de entorno en el panel de Railway
-5. Railway genera URL pública automáticamente
 
 ### Dashboard → Vercel
-1. Crear cuenta en [vercel.com](https://vercel.com)
-2. Conectar repositorio de GitHub
-3. Seleccionar carpeta `dashboard/` como root
-4. Agregar variable de entorno:
-   ```
-   VITE_WS_URL=wss://tu-gateway.railway.app
-   VITE_API_URL=https://tu-gateway.railway.app
-   ```
+1. https://security-gateway-omega.vercel.app/
 
----
 
 ## 🛠️ Tecnologías utilizadas
 
@@ -404,5 +392,4 @@ curl -X POST http://localhost:3000/api/block-ip \
 
 ## 👤 Autor
 
-Desarrollado como proyecto integrador para prácticas profesionales.
-Cubre: Sistemas Operativos · Infraestructura · Ciberseguridad
+Desarrollado por Gean Patricio Ponce Oto

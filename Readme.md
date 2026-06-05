@@ -1,6 +1,6 @@
 # 🛡️ Security Gateway Dashboard
 
-Un **reverse proxy con firewall de aplicación web (WAF)** construido con Node.js + Express, con dashboard en tiempo real para monitoreo de amenazas. Proyecto integrador de **Sistemas Operativos, Infraestructura y Ciberseguridad**.
+Un **reverse proxy con firewall de aplicación web (WAF)** construido con Node.js + Express, con dashboard en tiempo real para monitoreo de amenazas.
 
 🌐 **Demo en vivo:**
 - Dashboard: `https://tu-dashboard.vercel.app`
@@ -30,27 +30,6 @@ REQUEST ENTRANTE
 │   DASHBOARD (Puerto 5173)   │  ← React + WebSocket
 └─────────────────────────────┘
 ```
-
----
-
-## 🧠 Conceptos demostrados
-
-| Área | Concepto | Implementación |
-|---|---|---|
-| **Sistemas Operativos** | Señales del SO (SIGTERM, SIGINT) | Graceful shutdown del servidor |
-| **Sistemas Operativos** | Procesos y recursos | Event Loop de Node.js, manejo de memoria |
-| **Sistemas Operativos** | Sistema de archivos | SQLite persiste en Railway Volume |
-| **Infraestructura** | Reverse Proxy | `http-proxy-middleware` redirige al backend |
-| **Infraestructura** | Rate Limiting | Control de recursos por IP y ventana de tiempo |
-| **Infraestructura** | WebSockets | Comunicación bidireccional en tiempo real |
-| **Infraestructura** | Contenedores | Despliegue en Railway con volumen persistente |
-| **Ciberseguridad** | SQL Injection | Detección por regex en query params y body |
-| **Ciberseguridad** | XSS | Detección de scripts maliciosos |
-| **Ciberseguridad** | Path Traversal | Bloqueo de `../../etc/passwd` |
-| **Ciberseguridad** | CORS | Validación de origen de requests |
-| **Ciberseguridad** | IP Blacklist | Lista negra estática (.env) y dinámica (SQLite) |
-
----
 
 ## 📁 Estructura del proyecto
 
@@ -312,26 +291,8 @@ curl -X POST https://tu-gateway.up.railway.app/api/block-ip \
 
 ## 🌐 Despliegue
 
-### Gateway → Railway
-1. Crear cuenta en [railway.app](https://railway.app)
-2. New Project → Deploy from GitHub
-3. Settings → Root Directory: `gateway`
-4. Agregar variables de entorno en el panel
-5. Volumes → Add Volume → Mount Path: `/app/data`
-6. Settings → Networking → Generate Domain
-
-### Dashboard → Vercel
-1. Crear cuenta en [vercel.com](https://vercel.com)
-2. New Project → Import from GitHub
-3. Settings → Root Directory: `dashboard`
-4. Agregar variables de entorno:
-   ```
-   VITE_WS_URL  = wss://tu-gateway.up.railway.app
-   VITE_API_URL = https://tu-gateway.up.railway.app
-   ```
-5. Redeploy
-
----
+- Dashboard: `https://tu-dashboard.vercel.app`
+- Gateway API: `https://tu-gateway.up.railway.app`
 
 ## 🛠️ Tecnologías
 
